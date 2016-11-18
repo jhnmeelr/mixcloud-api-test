@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="search text-center">
+        <h1>Search some cloudcasts</h1>
+        <input type="text" placeholder="Type here..." [(ngModel)]="searchStr" (ngModelChange)="onSearchChange($event)">
+    </div>
+
+    <div class="row">
+        <div *ngIf="searchStr">
+            <div *ngFor="let item of data" class="col-md-4 text-center cloudcast">
+                <a href="{{item.url}}" target="_blank">
+                    <img src="{{item.pictures.large}}">
+                </a>
+                <h3>{{item.name}}</h3>
+            </div>
+        </div>
+    </div>
+</div>
